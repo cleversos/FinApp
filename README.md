@@ -106,7 +106,6 @@ $ npm run upload-min
 
 # 🤪 Stay In Touch
 I would like to speak with you about Finapp. I'm looking for awesome projects.
-- [My Telegram](https://t.me/ilkome)
 
 # 📄 License
 [MIT License](https://github.com/ilkome/finapp/blob/main/LICENSE)
