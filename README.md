@@ -3,15 +3,6 @@
 # Open source finance application
 Finapp helps you to control personal finances easily and efficiently.
 
-This is Finapp 3. For the 2.x see the [2 branch](https://github.com/ilkome/finapp).
-
-# 🕹 Demo
-[finapp.ilko.me](https://finapp.ilko.me/)
-
-
-# 🏞 Screenshots
-![Finapp 2.0.0](https://firebasestorage.googleapis.com/v0/b/finapp-17474.appspot.com/o/2.0.0%2Ffinapp-2.0.0-promo.png?alt=media&token=bce821da-f5fa-4e8a-be7a-8fc0ebfaf260)
-
 # 🚀 Features
 - Works offline on all devices (Service Worker): you can see all your data. Create, edit and delete transactions.
 - Instant synchronisation between all device (Firebase).
