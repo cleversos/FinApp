@@ -1,582 +1,112 @@
-Contribution: 2020-06-26 20:00
+<p align="center"><img align="center" style="width:320px" src="https://finapp.ilko.me/icon.png"/></p><br/>
+
+# Open source finance application
+Finapp helps you to control personal finances easily and efficiently.
+
+This is Finapp 3. For the 2.x see the [2 branch](https://github.com/ilkome/finapp).
+
+# 🕹 Demo
+[finapp.ilko.me](https://finapp.ilko.me/)
+
+
+# 🏞 Screenshots
+![Finapp 2.0.0](https://firebasestorage.googleapis.com/v0/b/finapp-17474.appspot.com/o/2.0.0%2Ffinapp-2.0.0-promo.png?alt=media&token=bce821da-f5fa-4e8a-be7a-8fc0ebfaf260)
+
+# 🚀 Features
+- Works offline on all devices (Service Worker): you can see all your data. Create, edit and delete transactions.
+- Instant synchronisation between all device (Firebase).
+- Optimised for mobile and PC.
+- Themes: dark and white.
+- Support multiple currencies with auto conversion.
+
+# 🦄 Technologies
+- Vue
+- Nuxt
+- Stylus
+- Pug
+- Firebase
+
+# 📦 Setup
+
+### Project setup
+``` bash
+# clone the repo
+$ git clone https://github.com/ilkome/finapp.git finapp
+
+# go into app's directory
+$ cd finapp
+
+# install app's dependencies
+$ npm install
+```
+
+### Firebase setup
+- Create a Firebase project in the [Firebase console](https://console.firebase.google.com/)
+- Go to the Authentication tab and enable Google authentication.
+- Go to the Database tab and enable Firestore.
+- Select Realtime Database and go to Rules tab.
+- Change rules to:
+``` javascript
+{
+  "rules": {
+    "users": {
+      "$uid": {
+        ".read": "auth != null && auth.uid == $uid",
+        ".write": "auth != null && auth.uid == $uid"
+      }
+    },
+    "currencies": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    },
+    "users-info": {
+      "$uid": {
+        ".read": "auth != null && auth.uid == $uid",
+        ".write": "auth != null && auth.uid == $uid"
+      }
+    }
+  }
+}
+```
+- Go to the Project Overview and click Add Firebase to your web app.
+- You need to replace config in app's directory `services/firebaseConfig.js` with your config.
+``` bash
+apiKey: 'YOUR_CONFIG',
+authDomain: 'YOUR_CONFIG',
+databaseURL: 'YOUR_CONFIG',
+projectId: 'YOUR_CONFIG',
+storageBucket: 'YOUR_CONFIG',
+messagingSenderId: 'YOUR_CONFIG'
+```
+
+
+## Development
+
+#### Compiles and hot-reloads
+``` bash
+$ npm run dev
+```
+
+## Production
+#### Compiles and minifies for production
+``` bash
+$ npm run build
+```
+
+## Upload to server
+You can add your FTP config in app's directory `ftp.config.js`
+
+``` bash
+# upload all files from dist folder
+$ npm run upload
 
-Contribution: 2020-06-26 20:01
+# upload only css, js, html files from dist folder
+$ npm run upload-min
+```
 
-Contribution: 2020-06-26 20:02
+# 🤪 Stay In Touch
+I would like to speak with you about Finapp. I'm looking for awesome projects.
+- [My Telegram](https://t.me/ilkome)
 
-Contribution: 2020-06-27 20:00
-
-Contribution: 2020-06-27 20:01
-
-Contribution: 2020-06-30 20:00
-
-Contribution: 2020-06-30 20:01
-
-Contribution: 2020-06-30 20:02
-
-Contribution: 2020-06-30 20:03
-
-Contribution: 2020-07-04 20:00
-
-Contribution: 2020-07-04 20:01
-
-Contribution: 2020-07-04 20:02
-
-Contribution: 2020-07-05 20:00
-
-Contribution: 2020-07-05 20:01
-
-Contribution: 2020-07-05 20:02
-
-Contribution: 2020-07-05 20:03
-
-Contribution: 2020-07-05 20:04
-
-Contribution: 2020-07-06 20:00
-
-Contribution: 2020-07-06 20:01
-
-Contribution: 2020-07-06 20:02
-
-Contribution: 2020-07-08 20:00
-
-Contribution: 2020-07-08 20:01
-
-Contribution: 2020-07-08 20:02
-
-Contribution: 2020-07-08 20:03
-
-Contribution: 2020-07-09 20:00
-
-Contribution: 2020-07-09 20:01
-
-Contribution: 2020-07-09 20:02
-
-Contribution: 2020-07-09 20:03
-
-Contribution: 2020-07-09 20:04
-
-Contribution: 2020-07-13 20:00
-
-Contribution: 2020-07-14 20:00
-
-Contribution: 2020-07-14 20:01
-
-Contribution: 2020-07-14 20:02
-
-Contribution: 2020-07-17 20:00
-
-Contribution: 2020-07-17 20:01
-
-Contribution: 2020-07-17 20:02
-
-Contribution: 2020-07-17 20:03
-
-Contribution: 2020-07-17 20:04
-
-Contribution: 2020-07-20 20:00
-
-Contribution: 2020-07-20 20:01
-
-Contribution: 2020-07-20 20:02
-
-Contribution: 2020-07-22 20:00
-
-Contribution: 2020-07-22 20:01
-
-Contribution: 2020-07-22 20:02
-
-Contribution: 2020-07-22 20:03
-
-Contribution: 2020-07-22 20:04
-
-Contribution: 2020-07-22 20:05
-
-Contribution: 2020-07-23 20:00
-
-Contribution: 2020-07-23 20:01
-
-Contribution: 2020-07-24 20:00
-
-Contribution: 2020-07-24 20:01
-
-Contribution: 2020-07-24 20:02
-
-Contribution: 2020-07-24 20:03
-
-Contribution: 2020-07-25 20:00
-
-Contribution: 2020-07-25 20:01
-
-Contribution: 2020-07-26 20:00
-
-Contribution: 2020-07-26 20:01
-
-Contribution: 2020-07-26 20:02
-
-Contribution: 2020-07-26 20:03
-
-Contribution: 2020-07-26 20:04
-
-Contribution: 2020-07-28 20:00
-
-Contribution: 2020-07-28 20:01
-
-Contribution: 2020-07-28 20:02
-
-Contribution: 2020-07-28 20:03
-
-Contribution: 2020-07-28 20:04
-
-Contribution: 2020-07-29 20:00
-
-Contribution: 2020-07-29 20:01
-
-Contribution: 2020-07-29 20:02
-
-Contribution: 2020-07-29 20:03
-
-Contribution: 2020-07-29 20:04
-
-Contribution: 2020-07-29 20:05
-
-Contribution: 2020-07-30 20:00
-
-Contribution: 2020-07-30 20:01
-
-Contribution: 2020-07-30 20:02
-
-Contribution: 2020-07-30 20:03
-
-Contribution: 2020-07-31 20:00
-
-Contribution: 2020-07-31 20:01
-
-Contribution: 2020-07-31 20:02
-
-Contribution: 2020-07-31 20:03
-
-Contribution: 2020-07-31 20:04
-
-Contribution: 2020-08-01 20:00
-
-Contribution: 2020-08-01 20:01
-
-Contribution: 2020-08-01 20:02
-
-Contribution: 2020-08-01 20:03
-
-Contribution: 2020-08-02 20:00
-
-Contribution: 2020-08-02 20:01
-
-Contribution: 2020-08-02 20:02
-
-Contribution: 2020-08-03 20:00
-
-Contribution: 2020-08-03 20:01
-
-Contribution: 2020-08-03 20:02
-
-Contribution: 2020-08-03 20:03
-
-Contribution: 2020-08-03 20:04
-
-Contribution: 2020-08-04 20:00
-
-Contribution: 2020-08-04 20:01
-
-Contribution: 2020-08-04 20:02
-
-Contribution: 2020-08-04 20:03
-
-Contribution: 2020-08-04 20:04
-
-Contribution: 2020-08-05 20:00
-
-Contribution: 2020-08-05 20:01
-
-Contribution: 2020-08-05 20:02
-
-Contribution: 2020-08-06 20:00
-
-Contribution: 2020-08-06 20:01
-
-Contribution: 2020-08-06 20:02
-
-Contribution: 2020-08-10 20:00
-
-Contribution: 2020-08-10 20:01
-
-Contribution: 2020-08-12 20:00
-
-Contribution: 2020-08-12 20:01
-
-Contribution: 2020-08-13 20:00
-
-Contribution: 2020-08-13 20:01
-
-Contribution: 2020-08-13 20:02
-
-Contribution: 2020-08-13 20:03
-
-Contribution: 2020-08-13 20:04
-
-Contribution: 2020-08-14 20:00
-
-Contribution: 2020-08-14 20:01
-
-Contribution: 2020-08-14 20:02
-
-Contribution: 2020-08-14 20:03
-
-Contribution: 2020-08-14 20:04
-
-Contribution: 2020-08-15 20:00
-
-Contribution: 2020-08-15 20:01
-
-Contribution: 2020-08-15 20:02
-
-Contribution: 2020-08-15 20:03
-
-Contribution: 2020-08-15 20:04
-
-Contribution: 2020-08-15 20:05
-
-Contribution: 2020-08-16 20:00
-
-Contribution: 2020-08-16 20:01
-
-Contribution: 2020-08-16 20:02
-
-Contribution: 2020-08-16 20:03
-
-Contribution: 2020-08-16 20:04
-
-Contribution: 2020-08-16 20:05
-
-Contribution: 2020-08-17 20:00
-
-Contribution: 2020-08-17 20:01
-
-Contribution: 2020-08-17 20:02
-
-Contribution: 2020-08-18 20:00
-
-Contribution: 2020-08-18 20:01
-
-Contribution: 2020-08-18 20:02
-
-Contribution: 2020-08-18 20:03
-
-Contribution: 2020-08-18 20:04
-
-Contribution: 2020-08-23 20:00
-
-Contribution: 2020-08-23 20:01
-
-Contribution: 2020-08-23 20:02
-
-Contribution: 2020-08-24 20:00
-
-Contribution: 2020-08-24 20:01
-
-Contribution: 2020-08-24 20:02
-
-Contribution: 2020-08-25 20:00
-
-Contribution: 2020-08-25 20:01
-
-Contribution: 2020-08-25 20:02
-
-Contribution: 2020-08-25 20:03
-
-Contribution: 2020-08-25 20:04
-
-Contribution: 2020-08-26 20:00
-
-Contribution: 2020-08-28 20:00
-
-Contribution: 2020-08-28 20:01
-
-Contribution: 2020-08-28 20:02
-
-Contribution: 2020-08-30 20:00
-
-Contribution: 2020-08-30 20:01
-
-Contribution: 2020-08-30 20:02
-
-Contribution: 2020-08-30 20:03
-
-Contribution: 2020-08-31 20:00
-
-Contribution: 2020-08-31 20:01
-
-Contribution: 2020-08-31 20:02
-
-Contribution: 2020-08-31 20:03
-
-Contribution: 2020-09-02 20:00
-
-Contribution: 2020-09-03 20:00
-
-Contribution: 2020-09-03 20:01
-
-Contribution: 2020-09-03 20:02
-
-Contribution: 2020-09-03 20:03
-
-Contribution: 2020-09-03 20:04
-
-Contribution: 2020-09-03 20:05
-
-Contribution: 2020-09-05 20:00
-
-Contribution: 2020-09-05 20:01
-
-Contribution: 2020-09-05 20:02
-
-Contribution: 2020-09-06 20:00
-
-Contribution: 2020-09-06 20:01
-
-Contribution: 2020-09-06 20:02
-
-Contribution: 2020-09-07 20:00
-
-Contribution: 2020-09-07 20:01
-
-Contribution: 2020-09-07 20:02
-
-Contribution: 2020-09-07 20:03
-
-Contribution: 2020-09-07 20:04
-
-Contribution: 2020-09-08 20:00
-
-Contribution: 2020-09-09 20:00
-
-Contribution: 2020-09-09 20:01
-
-Contribution: 2020-09-10 20:00
-
-Contribution: 2020-09-11 20:00
-
-Contribution: 2020-09-11 20:01
-
-Contribution: 2020-09-11 20:02
-
-Contribution: 2020-09-11 20:03
-
-Contribution: 2020-09-13 20:00
-
-Contribution: 2020-09-13 20:01
-
-Contribution: 2020-09-13 20:02
-
-Contribution: 2020-09-13 20:03
-
-Contribution: 2020-09-13 20:04
-
-Contribution: 2020-09-13 20:05
-
-Contribution: 2020-09-17 20:00
-
-Contribution: 2020-09-17 20:01
-
-Contribution: 2020-09-18 20:00
-
-Contribution: 2020-09-18 20:01
-
-Contribution: 2020-09-19 20:00
-
-Contribution: 2020-09-19 20:01
-
-Contribution: 2020-09-19 20:02
-
-Contribution: 2020-09-19 20:03
-
-Contribution: 2020-09-20 20:00
-
-Contribution: 2020-09-20 20:01
-
-Contribution: 2020-09-20 20:02
-
-Contribution: 2020-09-20 20:03
-
-Contribution: 2020-09-22 20:00
-
-Contribution: 2020-09-22 20:01
-
-Contribution: 2020-09-22 20:02
-
-Contribution: 2020-09-22 20:03
-
-Contribution: 2020-09-23 20:00
-
-Contribution: 2020-09-23 20:01
-
-Contribution: 2020-09-23 20:02
-
-Contribution: 2020-09-23 20:03
-
-Contribution: 2020-09-25 20:00
-
-Contribution: 2020-09-25 20:01
-
-Contribution: 2020-09-25 20:02
-
-Contribution: 2020-09-25 20:03
-
-Contribution: 2020-09-26 20:00
-
-Contribution: 2020-09-26 20:01
-
-Contribution: 2020-09-26 20:02
-
-Contribution: 2020-09-27 20:00
-
-Contribution: 2020-09-27 20:01
-
-Contribution: 2020-09-27 20:02
-
-Contribution: 2020-09-27 20:03
-
-Contribution: 2020-09-28 20:00
-
-Contribution: 2020-09-28 20:01
-
-Contribution: 2020-09-28 20:02
-
-Contribution: 2020-09-28 20:03
-
-Contribution: 2020-09-28 20:04
-
-Contribution: 2020-09-29 20:00
-
-Contribution: 2020-09-29 20:01
-
-Contribution: 2020-09-29 20:02
-
-Contribution: 2020-10-01 20:00
-
-Contribution: 2020-10-01 20:01
-
-Contribution: 2020-10-02 20:00
-
-Contribution: 2020-10-02 20:01
-
-Contribution: 2020-10-02 20:02
-
-Contribution: 2020-10-02 20:03
-
-Contribution: 2020-10-02 20:04
-
-Contribution: 2020-10-02 20:05
-
-Contribution: 2020-10-04 20:00
-
-Contribution: 2020-10-05 20:00
-
-Contribution: 2020-10-06 20:00
-
-Contribution: 2020-10-06 20:01
-
-Contribution: 2020-10-06 20:02
-
-Contribution: 2020-10-08 20:00
-
-Contribution: 2020-10-08 20:01
-
-Contribution: 2020-10-08 20:02
-
-Contribution: 2020-10-09 20:00
-
-Contribution: 2020-10-10 20:00
-
-Contribution: 2020-10-10 20:01
-
-Contribution: 2020-10-10 20:02
-
-Contribution: 2020-10-10 20:03
-
-Contribution: 2020-10-12 20:00
-
-Contribution: 2020-10-12 20:01
-
-Contribution: 2020-10-12 20:02
-
-Contribution: 2020-10-12 20:03
-
-Contribution: 2020-10-12 20:04
-
-Contribution: 2020-10-12 20:05
-
-Contribution: 2020-10-13 20:00
-
-Contribution: 2020-10-13 20:01
-
-Contribution: 2020-10-14 20:00
-
-Contribution: 2020-10-14 20:01
-
-Contribution: 2020-10-14 20:02
-
-Contribution: 2020-10-15 20:00
-
-Contribution: 2020-10-15 20:01
-
-Contribution: 2020-10-15 20:02
-
-Contribution: 2020-10-15 20:03
-
-Contribution: 2020-10-15 20:04
-
-Contribution: 2020-10-16 20:00
-
-Contribution: 2020-10-16 20:01
-
-Contribution: 2020-10-16 20:02
-
-Contribution: 2020-10-17 20:00
-
-Contribution: 2020-10-17 20:01
-
-Contribution: 2020-10-17 20:02
-
-Contribution: 2020-10-18 20:00
-
-Contribution: 2020-10-18 20:01
-
-Contribution: 2020-10-18 20:02
-
-Contribution: 2020-10-18 20:03
-
-Contribution: 2020-10-20 20:00
-
-Contribution: 2020-10-21 20:00
-
-Contribution: 2020-10-21 20:01
-
-Contribution: 2020-10-21 20:02
-
-Contribution: 2020-10-21 20:03
-
-Contribution: 2020-10-22 20:00
-
-Contribution: 2020-10-22 20:01
-
-Contribution: 2020-10-22 20:02
-
-Contribution: 2020-10-22 20:03
-
-Contribution: 2020-10-22 20:04
-
-Contribution: 2020-10-23 20:00
-
-Contribution: 2020-10-23 20:01
-
-Contribution: 2020-10-23 20:02
-
+# 📄 License
+[MIT License](https://github.com/ilkome/finapp/blob/main/LICENSE)
